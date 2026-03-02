@@ -2,7 +2,7 @@
 
 BlockShield is a production-grade, institutional-level monitoring dashboard designed to detect fraudulent blockchain transactions in the mempool **pre-consensus**. Using an ensemble of machine learning models, it analyzes incoming transactions in real-time to prevent fraud before it is finalized on the blockchain.
 
-![BlockShield Dashboard](https://raw.githubusercontent.com/darkbite179/crypto-fraud-detection-system-2/main/frontend/public/preview.png) *(Note: Add your own screenshot here)*
+<img width="1899" height="965" alt="Screenshot 2026-03-02 022445" src="https://github.com/user-attachments/assets/3aba7878-6556-40d3-bdd0-b3a4b7bf68cb" />
 
 ## 🚀 Key Features
 
