@@ -111,3 +111,4 @@ def classify_transaction(tx: dict, flag_threshold: float = 0.5, block_threshold:
         "fraud_probability": round(prob, 6),
         "decision": decision,
     }
+
