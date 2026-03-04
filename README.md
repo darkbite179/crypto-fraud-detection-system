@@ -1,46 +1,47 @@
-🚀 Crypto Fraud Detection System
-Real-Time Hybrid ML + Rule-Based Transaction Intelligence Engine
-🏆 Hackathon Submission | Production-Oriented FinTech Architecture
+# 🚀 Crypto Fraud Detection System  
+### Real-Time Hybrid ML + Rule-Based Transaction Intelligence Engine  
 
-A real-time fraud detection system designed to identify suspicious crypto and financial transactions using a Hybrid Intelligence Model:
+---
 
-🧠 Machine Learning Detection Engine (Primary)
+## 🏆 Hackathon Submission | Production-Oriented FinTech Architecture  
 
-🛡 Rule-Based Risk Engine (Fallback)
+A real-time fraud detection system designed to identify suspicious crypto and financial transactions using a **Hybrid Intelligence Model**:
 
-⚡ FastAPI Real-Time Backend
-
-📊 Behavioral Feature Engineering
-
-🔐 API Key Security Layer
-
-📈 Confidence Scoring & Risk Classification
+- 🧠 Machine Learning Detection Engine (Primary)  
+- 🛡 Rule-Based Risk Engine (Fallback)  
+- ⚡ FastAPI Real-Time Backend  
+- 📊 Behavioral Feature Engineering  
+- 🔐 API Key Security Layer  
+- 📈 Confidence Scoring & Risk Classification  
 
 This system simulates enterprise-level fintech fraud monitoring architecture.
 
-📌 Problem Statement
+---
+
+## 📌 Problem Statement  
 
 Digital and crypto transactions are:
 
-Instant
+- Instant  
+- Irreversible  
+- High-value  
+- Frequently targeted by fraud  
 
-Irreversible
-
-High-value
-
-Frequently targeted by fraud
-
-Traditional systems rely only on static rules.
+Traditional systems rely only on static rules.  
 Modern systems require behavioral ML-based intelligence.
 
 This project combines:
 
-✅ Behavioral anomaly detection
-✅ Risk scoring
-✅ Rule-based emergency protection
-✅ Real-time API decisioning
+- ✅ Behavioral anomaly detection  
+- ✅ Risk scoring  
+- ✅ Rule-based emergency protection  
+- ✅ Real-time API decisioning  
 
-🧠 System Architecture
+---
+
+## 🧠 System Architecture  
+
+```
 Frontend / Client
         ↓
 FastAPI Backend (app.py)
@@ -58,155 +59,157 @@ Threshold Decision Logic
 Rule-Based Fallback (if ML fails)
         ↓
 Structured API Response
-📊 Fraud Classification Engine
+```
+
+---
+
+## 📊 Fraud Classification Engine  
 
 The system classifies transactions into three risk levels:
 
-Risk Level	Decision	Description
-🟢 Low	Allow	Normal transaction
-🟡 Medium	Flag	Suspicious, requires review
-🔴 High	Block	High-confidence fraud
+| Risk Level | Decision | Description |
+|------------|----------|------------|
+| 🟢 Low | Allow | Normal transaction |
+| 🟡 Medium | Flag | Suspicious, requires review |
+| 🔴 High | Block | High-confidence fraud |
 
 This multi-tier classification mimics real-world fintech decision systems.
 
-📷 System Demonstration
-🟢 Case 1 – Allowed Transaction
+---
+
+## 📷 System Demonstration  
+
+### 🟢 Case 1 – Allowed Transaction  
 
 A transaction within expected behavioral patterns.
 
 <br><br>
 
-👉 INSERT YOUR ALLOWED TRANSACTION IMAGE HERE
+👉 **INSERT YOUR ALLOWED TRANSACTION IMAGE HERE**
 
 <br><br><br>
 
-Example Output
+**Example Output**
 
+```
 Engine: ML
 Decision: Allow
 Risk Level: Low
 Confidence Score: 0.17
 Latency: 0.004s
-🟡 Case 2 – Flagged Transaction (Suspicious)
+```
+
+---
+
+### 🟡 Case 2 – Flagged Transaction (Suspicious)  
 
 Moderate anomaly detected but below fraud threshold.
 
 <br><br>
 
-👉 INSERT YOUR FLAGGED TRANSACTION IMAGE HERE
+👉 **INSERT YOUR FLAGGED TRANSACTION IMAGE HERE**
 
 <br><br><br>
 
-Example Output
+**Example Output**
 
+```
 Engine: ML
 Decision: Flag
 Risk Level: Medium
 Confidence Score: 0.62
 Latency: 0.005s
-🔴 Case 3 – Fraudulent Transaction
+```
+
+---
+
+### 🔴 Case 3 – Fraudulent Transaction  
 
 High-risk behavioral anomaly detected:
 
-Large transaction spike
-
-Night-time anomaly
-
-New device
-
-New location
-
-High transaction velocity
+- Large transaction spike  
+- Night-time anomaly  
+- New device  
+- New location  
+- High transaction velocity  
 
 <br><br>
 
-👉 INSERT YOUR FRAUD TRANSACTION IMAGE HERE
+👉 **INSERT YOUR FRAUD TRANSACTION IMAGE HERE**
 
 <br><br><br>
 
-Example Output
+**Example Output**
 
+```
 Engine: ML
 Decision: Block
 Risk Level: High
 Confidence Score: 0.94
 Latency: 0.004s
-⚙️ Technical Stack
-Backend
+```
 
-FastAPI
+---
 
-Uvicorn
+## ⚙️ Technical Stack  
 
-Pydantic
+### Backend
+- FastAPI  
+- Uvicorn  
+- Pydantic  
 
-Machine Learning
+### Machine Learning
+- Scikit-Learn  
+- Pandas  
+- NumPy  
+- Custom Feature Engineering Pipeline  
 
-Scikit-Learn
+### Architecture Principles
+- Modular ML Engine  
+- Separation of Concerns  
+- Hybrid Detection System  
+- Fallback Mechanism  
+- API Security  
+- Structured Logging  
 
-Pandas
+---
 
-NumPy
-
-Custom Feature Engineering Pipeline
-
-Architecture Principles
-
-Modular ML Engine
-
-Separation of Concerns
-
-Hybrid Detection System
-
-Fallback Mechanism
-
-API Security
-
-Structured Logging
-
-🔍 Fraud Detection Logic
+## 🔍 Fraud Detection Logic  
 
 The ML model evaluates:
 
-Transaction amount deviation
-
-User historical average comparison
-
-Time-of-day anomaly detection
-
-New device detection
-
-New location detection
-
-Transaction burst velocity (10-minute window)
-
-Behavioral pattern shift
+- Transaction amount deviation  
+- User historical average comparison  
+- Time-of-day anomaly detection  
+- New device detection  
+- New location detection  
+- Transaction burst velocity (10-minute window)  
+- Behavioral pattern shift  
 
 The final decision is made using:
 
-Fraud probability score
+- Fraud probability score  
+- Configurable risk thresholds  
+- Business logic override rules  
 
-Configurable risk thresholds
+---
 
-Business logic override rules
+## 🔐 Security & Reliability Features  
 
-🔐 Security & Reliability Features
-
-API Key Authentication
-
-Fraud Logging for Audit Trail
-
-ML Engine Failure Protection
-
-Rule-Based Emergency Fallback
-
-Structured Error Handling
-
-Latency Monitoring
+- API Key Authentication  
+- Fraud Logging for Audit Trail  
+- ML Engine Failure Protection  
+- Rule-Based Emergency Fallback  
+- Structured Error Handling  
+- Latency Monitoring  
 
 Designed with reliability similar to production fintech systems.
 
-📂 Project Structure
+---
+
+## 📂 Project Structure  
+
+```
 backend/
 │
 ├── app.py
@@ -218,45 +221,58 @@ backend/
       ├── model_loader.py
       ├── feature_engineering.py
       ├── saved_model.pkl
-🚀 Run Locally
+```
+
+---
+
+## 🚀 Run Locally  
+
+```bash
 pip install -r requirements.txt
 python -m uvicorn app:app --reload
+```
 
 Access API documentation:
 
+```
 http://127.0.0.1:8000/docs
-🏗 Scalability Roadmap
+```
+
+---
+
+## 🏗 Scalability Roadmap  
 
 Future production enhancements:
 
-Kafka-based transaction streaming
+- Kafka-based transaction streaming  
+- PostgreSQL audit storage  
+- SHAP explainability layer  
+- Docker containerization  
+- Cloud deployment (AWS/GCP/Azure)  
+- Real-time monitoring dashboard  
 
-PostgreSQL audit storage
+---
 
-SHAP explainability layer
+## 🎯 Why This Project Stands Out  
 
-Docker containerization
-
-Cloud deployment (AWS/GCP/Azure)
-
-Real-time monitoring dashboard
-
-🎯 Why This Project Stands Out
-
-✔ Hybrid ML + Rule-Based Architecture
-✔ Real-Time API System
-✔ Multi-Level Risk Classification
-✔ Production-Oriented Folder Structure
-✔ Modular & Scalable Design
-✔ Hackathon-Ready & Deployment-Ready
+✔ Hybrid ML + Rule-Based Architecture  
+✔ Real-Time API System  
+✔ Multi-Level Risk Classification  
+✔ Production-Oriented Folder Structure  
+✔ Modular & Scalable Design  
+✔ Hackathon-Ready & Deployment-Ready  
 
 This is not just a demo — it is an architecture blueprint for a fintech fraud monitoring system.
 
-👨‍💻 Hackathon Team
+---
 
-Crypto Fraud Intelligence Engine
-Real-Time Risk Detection Architecture
+## 👨‍💻 Hackathon Team  
 
-⭐ Support
+Crypto Fraud Intelligence Engine  
+Real-Time Risk Detection Architecture  
+
+---
+
+## ⭐ Support  
 
 If you found this project interesting, consider giving it a ⭐ on GitHub.
