@@ -1,3 +1,25 @@
+# Virtual environment
 venv/
+.venv/
+
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+
+# Environment secrets
+.env
+
+# ML model binary (too large for git)
+*.pkl
+
+# Fraud audit logs
+fraud_log.txt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
