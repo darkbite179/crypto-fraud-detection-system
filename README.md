@@ -1,77 +1,262 @@
-# 🛡️ BlockShield — Pre-Consensus Blockchain Fraud Detection
+🚀 Crypto Fraud Detection System
+Real-Time Hybrid ML + Rule-Based Transaction Intelligence Engine
+🏆 Hackathon Submission | Production-Oriented FinTech Architecture
 
-BlockShield is a production-grade, institutional-level monitoring dashboard designed to detect fraudulent blockchain transactions in the mempool **pre-consensus**. Using an ensemble of machine learning models, it analyzes incoming transactions in real-time to prevent fraud before it is finalized on the blockchain.
+A real-time fraud detection system designed to identify suspicious crypto and financial transactions using a Hybrid Intelligence Model:
 
-<img width="1899" height="965" alt="Screenshot 2026-03-02 022445" src="https://github.com/user-attachments/assets/3aba7878-6556-40d3-bdd0-b3a4b7bf68cb" />
+🧠 Machine Learning Detection Engine (Primary)
 
-## 🚀 Key Features
+🛡 Rule-Based Risk Engine (Fallback)
 
-- **Real-Time Mempool Monitoring**: Live streaming of pending blockchain transactions.
-- **AI-Powered Analysis**: Ensemble model (XGBoost + CatBoost + Random Forest) with soft voting for 99.1% detection accuracy.
-- **Interactive Network Graph**: Visualizes wallet clusters and transaction links to identify sybil attacks and laundering patterns.
-- **Risk Decision Engine**: Intelligent categorization of transactions into **ALLOWED**, **FLAGGED**, or **BLOCKED**.
-- **Institutional UI**: Sleek, high-performance dashboard built with React, TailwindCSS v4, and Recharts.
-- **Hybrid API Layer**: Seamlessly toggles between live FastAPI backend data and high-fidelity local simulations.
+⚡ FastAPI Real-Time Backend
 
-## 🛠️ Tech Stack
+📊 Behavioral Feature Engineering
 
-### Frontend
-- **Framework**: React 19 + Vite
-- **Styling**: TailwindCSS v4 (Vanilla CSS variables)
-- **Icons**: Lucide React
-- **Charts**: Recharts
-- **State**: React Hooks (Custom Simulation Engine)
+🔐 API Key Security Layer
 
-### Backend (Planned/Integrated)
-- **Framework**: FastAPI (Python)
-- **ML Models**: CatBoost, XGBoost, Scikit-Learn (Random Forest)
-- **Data**: Real-time Ethereum/EVM mempool data
+📈 Confidence Scoring & Risk Classification
 
-## 📦 Project Structure
+This system simulates enterprise-level fintech fraud monitoring architecture.
 
-```text
-├── frontend/                # Vite + React Dashboard
-│   ├── src/
-│   │   ├── components/      # UI Components & Modules
-│   │   ├── data/            # Mock Data & Simulation Logic
-│   │   ├── hooks/           # Custom React Hooks (useSimulation)
-│   │   ├── pages/           # Main Dashboard View
-│   │   └── services/        # API Integration Layer
-│   └── ...
-└── ... (Backend source code)
-```
+📌 Problem Statement
 
-## ⚙️ Setup & Installation
+Digital and crypto transactions are:
 
-### 1. Prerequisites
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+Instant
 
-### 2. Installation
-```bash
-# Clone the repository
-git clone https://github.com/darkbite179/crypto-fraud-detection-system-2.git
+Irreversible
 
-# Navigate to the frontend directory
-cd crypto-fraud-detection-system-2/frontend
+High-value
 
-# Install dependencies
-npm install
-```
+Frequently targeted by fraud
 
-### 3. Run the Dashboard
-```bash
-npm run dev
-```
-The dashboard will be available at `http://localhost:5173`.
+Traditional systems rely only on static rules.
+Modern systems require behavioral ML-based intelligence.
 
-## 🛡️ Methodology
+This project combines:
 
-BlockShield utilizes a **Soft Voting Ensemble Classifier**. Every transaction entering the mempool is analyzed for over 50 features, including:
-- Transaction amount anomalies vs. historical wallet behavior.
-- Gas price manipulation patterns.
-- Interaction with known high-risk smart contracts.
-- Graph-based centrality measures (identifying mixer/tumbler patterns).
+✅ Behavioral anomaly detection
+✅ Risk scoring
+✅ Rule-based emergency protection
+✅ Real-time API decisioning
 
----
-*Created with ❤️ for the future of secure decentralized finance.*
+🧠 System Architecture
+Frontend / Client
+        ↓
+FastAPI Backend (app.py)
+        ↓
+ML Engine (predictor.py)
+        ↓
+Feature Engineering Pipeline
+        ↓
+Model Loader
+        ↓
+Fraud Probability Scoring
+        ↓
+Threshold Decision Logic
+        ↓
+Rule-Based Fallback (if ML fails)
+        ↓
+Structured API Response
+📊 Fraud Classification Engine
+
+The system classifies transactions into three risk levels:
+
+Risk Level	Decision	Description
+🟢 Low	Allow	Normal transaction
+🟡 Medium	Flag	Suspicious, requires review
+🔴 High	Block	High-confidence fraud
+
+This multi-tier classification mimics real-world fintech decision systems.
+
+📷 System Demonstration
+🟢 Case 1 – Allowed Transaction
+
+A transaction within expected behavioral patterns.
+
+<br><br>
+
+👉 INSERT YOUR ALLOWED TRANSACTION IMAGE HERE
+
+<br><br><br>
+
+Example Output
+
+Engine: ML
+Decision: Allow
+Risk Level: Low
+Confidence Score: 0.17
+Latency: 0.004s
+🟡 Case 2 – Flagged Transaction (Suspicious)
+
+Moderate anomaly detected but below fraud threshold.
+
+<br><br>
+
+👉 INSERT YOUR FLAGGED TRANSACTION IMAGE HERE
+
+<br><br><br>
+
+Example Output
+
+Engine: ML
+Decision: Flag
+Risk Level: Medium
+Confidence Score: 0.62
+Latency: 0.005s
+🔴 Case 3 – Fraudulent Transaction
+
+High-risk behavioral anomaly detected:
+
+Large transaction spike
+
+Night-time anomaly
+
+New device
+
+New location
+
+High transaction velocity
+
+<br><br>
+
+👉 INSERT YOUR FRAUD TRANSACTION IMAGE HERE
+
+<br><br><br>
+
+Example Output
+
+Engine: ML
+Decision: Block
+Risk Level: High
+Confidence Score: 0.94
+Latency: 0.004s
+⚙️ Technical Stack
+Backend
+
+FastAPI
+
+Uvicorn
+
+Pydantic
+
+Machine Learning
+
+Scikit-Learn
+
+Pandas
+
+NumPy
+
+Custom Feature Engineering Pipeline
+
+Architecture Principles
+
+Modular ML Engine
+
+Separation of Concerns
+
+Hybrid Detection System
+
+Fallback Mechanism
+
+API Security
+
+Structured Logging
+
+🔍 Fraud Detection Logic
+
+The ML model evaluates:
+
+Transaction amount deviation
+
+User historical average comparison
+
+Time-of-day anomaly detection
+
+New device detection
+
+New location detection
+
+Transaction burst velocity (10-minute window)
+
+Behavioral pattern shift
+
+The final decision is made using:
+
+Fraud probability score
+
+Configurable risk thresholds
+
+Business logic override rules
+
+🔐 Security & Reliability Features
+
+API Key Authentication
+
+Fraud Logging for Audit Trail
+
+ML Engine Failure Protection
+
+Rule-Based Emergency Fallback
+
+Structured Error Handling
+
+Latency Monitoring
+
+Designed with reliability similar to production fintech systems.
+
+📂 Project Structure
+backend/
+│
+├── app.py
+├── rule_based_detector.py
+├── requirements.txt
+│
+└── ml_engine/
+      ├── predictor.py
+      ├── model_loader.py
+      ├── feature_engineering.py
+      ├── saved_model.pkl
+🚀 Run Locally
+pip install -r requirements.txt
+python -m uvicorn app:app --reload
+
+Access API documentation:
+
+http://127.0.0.1:8000/docs
+🏗 Scalability Roadmap
+
+Future production enhancements:
+
+Kafka-based transaction streaming
+
+PostgreSQL audit storage
+
+SHAP explainability layer
+
+Docker containerization
+
+Cloud deployment (AWS/GCP/Azure)
+
+Real-time monitoring dashboard
+
+🎯 Why This Project Stands Out
+
+✔ Hybrid ML + Rule-Based Architecture
+✔ Real-Time API System
+✔ Multi-Level Risk Classification
+✔ Production-Oriented Folder Structure
+✔ Modular & Scalable Design
+✔ Hackathon-Ready & Deployment-Ready
+
+This is not just a demo — it is an architecture blueprint for a fintech fraud monitoring system.
+
+👨‍💻 Hackathon Team
+
+Crypto Fraud Intelligence Engine
+Real-Time Risk Detection Architecture
+
+⭐ Support
+
+If you found this project interesting, consider giving it a ⭐ on GitHub.
