@@ -5,11 +5,11 @@ The Elliptic dataset already provides 166 anonymised features per transaction.
 This module computes additional **behavioral** features that capture suspicious
 activity patterns visible at the mempool stage:
 
-    • amount_spike_ratio   — tx value vs. local neighbourhood mean
-    • tx_frequency         — proxy for sender activity volume
+    • amount_spike_ratio   — tx value vs. user average amount
+    • tx_frequency         — proxy for sender activity volume (velocity)
     • time_deviation       — z-score of time-step within neighbourhood
-    • address_reuse_flag   — binary flag if transaction neighbours repeat
-    • wallet_activity_std  — standard deviation of neighbour feature values
+    • address_reuse_flag   — binary flag for new device (suspicious)
+    • wallet_activity_std  — binary flag for new location (suspicious)
 """
 
 import pandas as pd
@@ -89,24 +89,53 @@ def extract_behavioral_features(features_df: pd.DataFrame) -> pd.DataFrame:
 def extract_behavioral_features_single(tx: dict, feature_columns: list[str]) -> dict:
     """Extract behavioural features for a **single** incoming transaction.
 
-    Used at prediction time when we don't have a full DataFrame context.
-    Falls back to neutral / default values.
+    Used at prediction time. Maps real transaction fields to the
+    behavioral features the model was trained on.
 
     Parameters
     ----------
     tx : dict
-        Raw transaction fields.
+        Raw transaction fields from API request.
     feature_columns : list[str]
         Column names expected by the trained model.
 
     Returns
     -------
     dict
-        Transaction dict augmented with behavioural feature defaults.
+        Transaction dict augmented with correct behavioural feature values.
     """
-    tx.setdefault("amount_spike_ratio", 1.0)
-    tx.setdefault("tx_frequency", 1)
-    tx.setdefault("time_deviation", 0.0)
-    tx.setdefault("address_reuse_flag", 0)
-    tx.setdefault("wallet_activity_std", 0.0)
+
+    # ── Amount spike ratio ───────────────────────────────────────────
+    # How many times larger is this transaction vs user's average?
+    amount = float(tx.get("amount", 0.0))
+    user_avg = float(tx.get("user_avg_amount", 0.0))
+    if user_avg <= 0:
+        user_avg = max(amount, 1.0)
+    tx["amount_spike_ratio"] = round(amount / user_avg, 4)
+
+    # ── Transaction frequency ────────────────────────────────────────
+    # How many transactions in last 10 minutes?
+    tx["tx_frequency"] = int(tx.get("velocity_10min", 1)) or 1
+
+    # ── Time deviation ───────────────────────────────────────────────
+    # Time of transaction (0-23 hours) as deviation signal
+    tx["time_deviation"] = float(tx.get("time", 0.0))
+
+    # ── Address reuse flag ───────────────────────────────────────────
+    # New device = suspicious = 1, same device = 0
+    tx["address_reuse_flag"] = int(bool(tx.get("is_new_device", False)))
+
+    # ── Wallet activity std ──────────────────────────────────────────
+    # New location = suspicious = 1.0, same location = 0.0
+    tx["wallet_activity_std"] = float(bool(tx.get("is_new_location", False)))
+
+    print(
+        f"[feature_engineering] Behavioral features → "
+        f"amount_spike_ratio={tx['amount_spike_ratio']}, "
+        f"tx_frequency={tx['tx_frequency']}, "
+        f"time_deviation={tx['time_deviation']}, "
+        f"address_reuse_flag={tx['address_reuse_flag']}, "
+        f"wallet_activity_std={tx['wallet_activity_std']}"
+    )
+
     return tx
