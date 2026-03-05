@@ -49,6 +49,12 @@ export function generateTransaction() {
         ? randomBetween(50, 500)     // large — suspicious
         : randomBetween(0.001, 10);  // normal
 
+    // Backend-required fields
+    const velocity_10min = Math.random() < 0.1 ? Math.floor(randomBetween(5, 12)) : Math.floor(randomBetween(0, 4));
+    const is_new_device = Math.random() < 0.15;
+    const is_new_location = Math.random() < 0.12;
+    const user_avg_amount = parseFloat(randomBetween(1, 50).toFixed(2));
+
     const riskScore = calculateRisk(amount, sender);
 
     const decision = riskScore > 0.85
@@ -65,7 +71,12 @@ export function generateTransaction() {
         receiver,
         receiverShort: shortAddr(receiver),
         amount: parseFloat(amount.toFixed(4)),
+        time: txCounter,
         timestamp: Date.now(),
+        velocity_10min,
+        is_new_device,
+        is_new_location,
+        user_avg_amount,
         riskScore: parseFloat(riskScore.toFixed(3)),
         decision,
         latency: parseFloat(randomBetween(0.05, 0.12).toFixed(3)),
