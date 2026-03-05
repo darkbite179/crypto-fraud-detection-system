@@ -85,7 +85,8 @@ A transaction within expected behavioral patterns.
 
 <br><br>
 
-👉 **INSERT YOUR ALLOWED TRANSACTION IMAGE HERE**
+<img width="1344" height="796" alt="image" src="https://github.com/user-attachments/assets/9ba9a60f-6eb8-4fa2-9f79-ead92cc9c9dc" />
+
 
 <br><br><br>
 
@@ -106,8 +107,8 @@ Latency: 0.004s
 Moderate anomaly detected but below fraud threshold.
 
 <br><br>
+<img width="1424" height="748" alt="image" src="https://github.com/user-attachments/assets/770a6802-dcf7-4e6c-be50-8f27f768d150" />
 
-👉 **INSERT YOUR FLAGGED TRANSACTION IMAGE HERE**
 
 <br><br><br>
 
@@ -135,7 +136,8 @@ High-risk behavioral anomaly detected:
 
 <br><br>
 
-👉 **INSERT YOUR FRAUD TRANSACTION IMAGE HERE**
+<img width="1276" height="816" alt="image" src="https://github.com/user-attachments/assets/de477dc4-74d7-4059-ae43-ba0ddddd76d6" />
+
 
 <br><br><br>
 
