@@ -152,6 +152,8 @@ Latency: 0.004s
 ```
 
 ---
+### And here is the Fronted image
+<img width="1920" height="1080" alt="Screenshot 2026-03-05 135550" src="https://github.com/user-attachments/assets/e3aa4fd9-8c13-4df2-9b28-857e0296cc3e" />
 
 ## ⚙️ Technical Stack  
 
