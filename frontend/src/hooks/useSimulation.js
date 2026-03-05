@@ -27,21 +27,38 @@ export function useSimulation() {
         const mockTx = generateTransaction();
 
         if (isLive && backendStatus === 'online') {
+            // Send only the fields the backend expects
             const response = await analyzeTransaction({
-                tx_hash: mockTx.tx_hash,
+                amount: mockTx.amount,
+                time: mockTx.time,
                 sender: mockTx.sender,
                 receiver: mockTx.receiver,
-                amount: mockTx.amount,
-                timestamp: mockTx.timestamp,
+                velocity_10min: mockTx.velocity_10min,
+                is_new_device: mockTx.is_new_device,
+                is_new_location: mockTx.is_new_location,
+                user_avg_amount: mockTx.user_avg_amount,
             });
 
             if (response) {
-                mockTx.decision = response.status || mockTx.decision;
-                if (response.risk_score != null) {
-                    mockTx.riskScore = response.risk_score;
+                // Map backend response to frontend format
+                const decisionMap = { 'Block': 'BLOCKED', 'Flag': 'FLAGGED', 'Allow': 'ALLOWED' };
+                mockTx.decision = decisionMap[response.final_decision] || mockTx.decision;
+
+                if (response.final_fraud_probability != null) {
+                    mockTx.riskScore = response.final_fraud_probability;
                 }
-                if (response.latency != null) {
-                    mockTx.latency = response.latency;
+                if (response.latency_sec != null) {
+                    mockTx.latency = response.latency_sec;
+                }
+                if (response.reason) {
+                    mockTx.reason = response.reason;
+                }
+                if (response.risk_level) {
+                    mockTx.riskLevel = response.risk_level;
+                }
+                // Store raw engine results for potential future use
+                if (response.engines) {
+                    mockTx.engines = response.engines;
                 }
             }
         }
